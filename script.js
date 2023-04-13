@@ -38,18 +38,3 @@ function simpleSentenceBuilder(articles,peopleNouns,actionVerbs, prepositions, p
 
 //simpleSentenceBuilder(articles, peopleNouns, actionVerbs, prepositions, placeNouns);
 
-class Hero{
-    constructor(){
-        const peopleNouns = ['Wizard', 'Thief', 'Bard', 'Paladin', 'Sorcerer', 'Mage', 'Ranger', 'Summoner', 'Knight'];
-        this._role = peopleNouns[Math.floor(Math.random() * peopleNouns.length)];
-    }
-
-    get role(){
-        return this._role;
-    }
-}
-
-
-let hero1 = new Hero;
-console.log(hero1.role);
-console.log(hero1.role);
