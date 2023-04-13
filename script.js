@@ -18,11 +18,11 @@ const capitalArticles = ['A', 'The'];
 const genders = ['his', 'her'];
 
 // List of prepositions
-const prepositions = ['above', 'across', 'against', 'along', 'among', 'around', 'at', 'before', 'behind', 'below', 'beneath', 'beside', 'between', 'by', 'down', 'from', 'in', 'into', 'near', 'of', 'off', 'on', 'to', 'toward', 'under', 'upon', 'with',  'within'];
+const prepositions = ['above', 'across', 'against', 'along', 'among', 'around', 'at', 'before', 'behind', 'below', 'beneath', 'beside', 'between', 'by', 'down', 'from', 'in', 'into', 'near', 'toward', 'under', 'upon'];
 
 
 
-
+// Sentence style 1: Longer
 function sentence1(){
     let hero1 = new Hero();
     let hero2 = new Hero();
@@ -43,7 +43,7 @@ function sentence1(){
     if(hero2.personality.charAt(0) === 'A' || hero2.personality.charAt(0) === 'I' ){
         article2 = 'an';
     }
-    if(enemy1.personality.charAt(0) === 'A' || enemy1.personality.charAt(0) === 'I'){
+    if(enemy1.personality.charAt(0) === 'A' || enemy1.personality.charAt(0) === 'I' || enemy1.personality.charAt(0) === 'E'){
         article3 = 'an';
     }
     if(location1.locationDescription.charAt(0) === 'A' || location1.locationDescription.charAt(0) === 'I'){
@@ -54,7 +54,7 @@ function sentence1(){
     return `${article1} ${hero1.personality} ${hero1.role} and ${article2} ${hero2.personality} ${hero2.role} ${attackVerb} ${article3} ${enemy1.personality} ${enemy1.enemyType} ${prepposition} ${article4} ${location1.locationDescription} ${location1.location}`;
 }
 
-
+// Sentence style 2: Shorter
 function sentence2(){
     let hero1 = new Hero();
     let weapon = hero1.weapon;
@@ -66,10 +66,11 @@ function sentence2(){
     let gender = genders[Math.floor(Math.random() * genders.length)];
     let victory = victoryVerbs[Math.floor(Math.random() * victoryVerbs.length)];
 
+    // replace 'a' or 'the' with 'an' if the following word starts with an 'a'
     if(hero1.personality.charAt(0) === 'A' || hero1.personality.charAt(0) === 'I'){
         article1 = 'An';
     }
-    if(enemy1.personality.charAt(0) === 'A' || enemy1.personality.charAt(0) === 'I'){
+    if(enemy1.personality.charAt(0) === 'A' || enemy1.personality.charAt(0) === 'I' || enemy1.personality.charAt(0) === 'E'){
         article2 = 'an';
     }
 
@@ -77,8 +78,18 @@ function sentence2(){
     return `${article1} ${hero1.personality} ${hero1.role} ${heroEquip} ${gender} ${weapon} ${victory} ${article2} ${enemy1.personality} ${enemy1.enemyType}`;
 }
 
+// Randomly calls either sentence1 or sentence2
+function callRandSentence(){
+    let randNum = Math.floor(Math.random() * 2);
+    
+    if(randNum === 0){
+        console.log(sentence1());
+    }
+    else{
+        console.log(sentence2());
+    }
+}
 
 
-
-
-console.log(sentence2());
+// call the sentence and print it to console
+callRandSentence();
