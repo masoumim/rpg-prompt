@@ -5,7 +5,7 @@
 class Hero{
     constructor(){
         const roles = ['Wizard', 'Thief', 'Bard', 'Paladin', 'Sorcerer', 'Mage', 'Ranger', 'Summoner', 'Knight'];
-        const personalities = ['Mighty', 'Brave', 'Strong', 'Sly', 'Daring', 'Kind', 'Furious', 'Chaotic', 'Brilliant'];
+        const personalities = ['Mighty', 'Brave', 'Strong', 'Sly', 'Daring', 'Kind', 'Furious', 'Chaotic', 'Brilliant', 'Intimidating'];
         const weapons = ['Sword', 'Knife', 'Staff', 'Wand', 'Mace', 'Spellbook', 'Bow', 'Dagger'];
         this._role = roles[Math.floor(Math.random() * roles.length)];
         this._personality = personalities[Math.floor(Math.random() * personalities.length)];
@@ -46,23 +46,19 @@ class Enemy{
 class Location{
     constructor(){
         const locationTypes = ['Castle', 'Swamp', 'Graveyard', 'Town', 'Mountain', 'Cave', 'Tower', 'Bridge', 'Forest', 'Temple', 'Valley'];
+        const locationDescriptions = ['Large', 'Abandoned', 'Sprawling', 'Mysterious', 'Dark', 'Ancient','Deserted'];        
         this._location = locationTypes[Math.floor(Math.random() * locationTypes.length)];
-        // TODO: location descriptiors / adjectives...
+        this._locationDescription = locationDescriptions[Math.floor(Math.random() * locationDescriptions.length)];        
     }
 
     get location(){
         return this._location;
     }
+
+    get locationDescription(){
+        return this._locationDescription;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-let hero1 = new Hero;
-console.log(hero1.role);
+// Export the Classes
+module.exports = {Hero, Enemy, Location};
