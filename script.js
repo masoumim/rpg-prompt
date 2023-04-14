@@ -1,8 +1,9 @@
 // This program creates simple sentences about people, places and things commonly found in an RPG (Role-Playing Game)
 
+
+
 // Import the classes from datamodel.js
 const {Hero, Enemy, Location} = require('./datamodel.js');
-
 
 // List of verbs
 const heroEquipVerbs = ['using', 'equipped with', 'armed with'];

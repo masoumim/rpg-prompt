@@ -62,3 +62,4 @@ class Location{
 
 // Export the Classes
 module.exports = {Hero, Enemy, Location};
+
